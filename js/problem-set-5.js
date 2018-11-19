@@ -23,10 +23,20 @@
 function mario() {
 
   ////////////// DO NOT MODIFY
-  let height; // DO NOT MODIFY
+  let height = 0; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
+  let input = 0;
+  let i = 1;
+  let row = "";
+
+  while(height < 1 || height > 23){
+  input = prompt("Type an integer from 1 to 23.");
+  height = Math.floor(input);
+  }
+
+
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
