@@ -28,12 +28,25 @@ function mario() {
 
   // WRITE YOUR EXERCISE 1 CODE HERE
   let input = 0;
-  let i = 1;
-  let row = "";
+  let i = 0;
+  let row="";
 
-  while(height < 1 || height > 23){
+  while(height < 1 || height > 23 || height % 1 != 0){
   input = prompt("Type an integer from 1 to 23.");
   height = Math.floor(input);
+  }
+
+  for(i = 1; i <= height; i++;){
+    row = "";
+    for(let j; j <= (height-i); j++;){
+      row += " ";
+    }
+    row += "#";
+    for(let k; k <= i; k++;){
+    row += "#";
+    }
+    var p = document.getElementById("mario-easy-output");
+    p.innerHTML = row;
   }
 
 
