@@ -28,26 +28,12 @@ function mario() {
 
   // WRITE YOUR EXERCISE 1 CODE HERE
   let input = 0;
-  let i = 0;
-  let row="";
 
   while(height < 1 || height > 23 || height % 1 != 0){
   input = prompt("Type an integer from 1 to 23.");
   height = Math.floor(input);
   }
 
-  for(i = 1; i <= height; i++;){
-    row = "";
-    for(let j; j <= (height-i); j++;){
-      row += " ";
-    }
-    row += "#";
-    for(let k; k <= i; k++;){
-    row += "#";
-    }
-    var p = document.getElementById("mario-easy-output");
-    p.innerHTML = row;
-  }
 
 
 
@@ -177,6 +163,36 @@ function credit() {
 function guess() {
 
   // WRITE YOUR EXERCISE 4 CODE HERE
+  let guess;
+  let numGuess = 0;
+  let rNum = Math.floor((Math.random() * 1000) + 1);
+  let input = 0;
+
+  while(guess < 1 || guess % 1 != 0){
+  input = prompt("Enter a guess here");
+  guess = Math.floor(input);
+  }
+
+
+  while(guess != rNum){
+    if(guess > rNum){
+      while(guess < 1 || guess % 1 != 0){
+      input = prompt("Guess Lower");
+      guess = Math.floor(input);
+      }
+      numGuess++;
+    }
+    if(guess < rNum){
+      while(guess < 1 || guess % 1 != 0){
+      input = prompt("Guess Higher");
+      guess = Math.floor(input);
+      }
+      numGuess++;
+    }
+  }
+
+  var p = document.getElementById("guess-output");
+  p.innerHTML = "Congratulations! It took you " + numGuess + " guesses.";
 
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
@@ -212,6 +228,33 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
+  let input = 0;
+  let hurr = "";
+
+  while(windspeed < 1 || windspeed % 1 != 0){
+  input = prompt("Type a nonegative windspeed");
+  windspeed = Math.floor(input);
+  }
+
+  if(windspeed >= 157){
+    hurr = "Category 5 Hurricane.";
+  }else if(windspeed < 157 && windspeed >= 130){
+    hurr = "Category 4 Hurricane.";
+  }else if(windspeed < 130 && windspeed >= 111){
+    hurr = "Category 3 Hurricane.";
+  }else if(windspeed < 111 && windspeed >= 96){
+    hurr = "Category 2 Hurricane.";
+  }else if(windspeed < 96 && windspeed >= 74){
+    hurr = "Category 1 Hurricane.";
+  }else if(windspeed < 74 && windspeed >= 39){
+    hurr = "Tropical Storm.";
+  }else{
+    hurr = "The skies are calm..."
+  }
+
+  var p = document.getElementById("hurricane-output");
+  p.innerHTML = hurr;
+
 
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
