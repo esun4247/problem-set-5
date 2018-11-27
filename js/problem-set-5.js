@@ -163,30 +163,22 @@ function credit() {
 function guess() {
 
   // WRITE YOUR EXERCISE 4 CODE HERE
-  let guess;
+  let guess = 0;
   let numGuess = 0;
   let rNum = Math.floor((Math.random() * 1000) + 1);
-  let input = 0;
 
-  while(guess < 1 || guess % 1 != 0){
-  input = prompt("Enter a guess here");
-  guess = Math.floor(input);
-  }
+
+  guess = prompt("Enter a guess here");
+
 
 
   while(guess != rNum){
     if(guess > rNum){
-      while(guess < 1 || guess % 1 != 0){
-      input = prompt("Guess Lower");
-      guess = Math.floor(input);
-      }
+      guess = prompt("Your guess was higher than the number");
       numGuess++;
     }
     if(guess < rNum){
-      while(guess < 1 || guess % 1 != 0){
-      input = prompt("Guess Higher");
-      guess = Math.floor(input);
-      }
+      guess = prompt("Your guess was lower than the number");
       numGuess++;
     }
   }
