@@ -33,7 +33,8 @@ function mario() {
   input = prompt("Type an integer from 1 to 23.");
   height = Math.floor(input);
   }
-
+  // space - "&nbsp"
+  
 
 
 
@@ -163,22 +164,32 @@ function credit() {
 function guess() {
 
   // WRITE YOUR EXERCISE 4 CODE HERE
-  let guess = 0;
+  let guess;
   let numGuess = 0;
   let rNum = Math.floor((Math.random() * 1000) + 1);
+  let input = 0;
 
-
-  guess = prompt("Enter a guess here");
-
+  while(guess < 1 || guess > 1000 || guess % 1 != 0){
+  input = prompt("Make a guess!");
+  guess = Math.floor(input);
+  }
 
 
   while(guess != rNum){
     if(guess > rNum){
-      guess = prompt("Your guess was higher than the number");
+      guess = 0;
+      while(guess < 1 || guess > 1000 || guess % 1 != 0){
+      input = prompt("Your guess was higher than the number");
+      guess = Math.floor(input);
+      }
       numGuess++;
     }
     if(guess < rNum){
-      guess = prompt("Your guess was lower than the number");
+      guess = 0;
+      while(guess < 1 || guess > 1000 || guess % 1 != 0){
+      input = prompt("Your guess was lower than the number");
+      guess = Math.floor(input);
+      }
       numGuess++;
     }
   }
@@ -342,6 +353,66 @@ function reportCard() {
    *       representative of the number of tests, quizzes, and homework
    *       grades the user enters, respectively.
    */
+   let testStop = 0;
+   let quizStop = 0;
+   let homeStop = 0;
+
+   let tinput = 0;
+   let qinput = 0;
+   let hinput = 0;
+
+   while(testStop == 0){
+     if(tinput >= 0 && tinput <= 100){
+       tinput = Number(prompt("Add a test grade."));
+       tests++;
+     }else if(tinput < -1 || tinput > 100 || tinput % 1 != 0){
+       alert("Not a valid grade");
+       tinput = 0;
+     }else{
+       testStop++;
+       tinput = 0;
+       tests--;
+     }
+     testTotal = testTotal + tinput;
+   }testTotal++;
+
+   while(quizStop == 0){
+     if(qinput >= 0 && qinput <= 100){
+       qinput = Number(prompt("Add a quiz grade."));
+       quizzes++;
+     }else if(qinput < -1 || qinput > 100 || qinput % 1 != 0){
+       alert("Not a valid grade");
+       qinput = 0;
+     }else{
+       quizStop++;
+       qinput = 0;
+       quizzes--;
+     }
+     quizTotal = quizTotal + qinput;
+   }quizTotal++;
+
+   while(homeStop == 0){
+     if(hinput >= 0 && hinput <= 100){
+       hinput = Number(prompt("Add a homework grade."));
+       homeworks++;
+     }else if(hinput < -1 || hinput > 100 || hinput % 1 != 0){
+       alert("Not a valid grade");
+       hinput = 0;
+     }else{
+       homeStop++;
+       hinput = 0;
+       homeworks--;
+     }
+     homeworkTotal = homeworkTotal + hinput;
+   }homeworkTotal++;
+
+
+   let testP = testTotal/tests;
+   let quizP = quizTotal/quizzes;
+   let homeP = homeworkTotal/homeworks;
+   let gradeP = (testP*.6)+(quizP*.3)+(homeP*.1);
+   var p = document.getElementById("report-card-output");
+   p.innerHTML = "Tests: " + testP.toFixed(2) + "<br/>Quizzes: " + quizP.toFixed(2) + "<br/>Homework: " + homeP.toFixed(2) + "<br/>Grade: " + gradeP.toFixed(2);
 
   /////////////////////// DO NOT MODIFY
   check('report-card', // DO NOT MODIFY
