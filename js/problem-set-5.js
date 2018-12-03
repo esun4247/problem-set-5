@@ -33,9 +33,19 @@ function mario() {
   input = prompt("Type an integer from 1 to 23.");
   height = Math.floor(input);
   }
-  // space - "&nbsp"
-  
-
+  // space = "&nbsp"
+  let pyr = "";
+  for(let i = height; i > 0; i--){
+    for(let u = i-1; u > 0; u--){
+      pyr = pyr + "&nbsp";
+    }
+    for(let k = height - i + 2; k > 0; k--){
+      pyr = pyr + "#";
+    }
+    pyr = pyr + "<br/>";
+  }
+let p = document.getElementById("mario-easy-output");
+p.innerHTML = "<code>" + pyr + "</code>";
 
 
   ////////////////////////// DO NOT MODIFY
@@ -72,6 +82,29 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
+  let input = 0;
+
+  while(height < 1 || height > 23 || height % 1 != 0){
+  input = prompt("Type an integer from 1 to 23.");
+  height = Math.floor(input);
+  }
+  // space = "&nbsp"
+  let pyr = "";
+  for(let i = height; i > 0; i--){
+    for(let u = i-1; u > 0; u--){
+      pyr = pyr + "&nbsp";
+    }
+    for(let k = height - i + 2; k > 0; k--){
+      pyr = pyr + "#";
+    }
+    pyr = pyr + "&nbsp" + "&nbsp";
+    for(let j = height - i + 2; j > 0; j--){
+      pyr = pyr + "#";
+    }
+    pyr = pyr + "<br/>";
+  }
+let p = document.getElementById("mario-hard-output");
+p.innerHTML = "<code>" + pyr + "</code>";
 
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
@@ -125,6 +158,24 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
+  let i = 0;
+  let input;
+  let aacard = 0;
+  let mcard = 0;
+  let vcard = 0;
+  let ncard = 0;
+  let oof;
+
+  while(true){
+    card = Number(prompt("Enter a valid credit card number."));
+    if(Number.isInteger(card)){
+      break;
+    }
+  }
+
+
+
+
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
@@ -288,7 +339,25 @@ function gymnastics() {
   let total = 0; //// DO NOT MODIFY
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
+  let input;
 
+  for(let i = 0; i < 6; i++){
+    input = Number(prompt("Add a score between 0 and 10"));
+    while(i < 0 || i > 10){
+      input = Number(prompt("Add a score between 0 and 10"));
+    }
+    scores.push(input);
+  }
+
+  for(let n = 0; n < 6; n++){
+    total = total + scores[n];
+  }
+  let min = Number(Math.min(...scores));
+  let max = Number(Math.max(...scores));
+  let avtotal = total - (min + max);
+  let average = avtotal/4;
+  let p = document.getElementById("gymnastics-output");
+  p.innerHTML = "Discarded: " + min + ", " + max + "<br/>Score: " + average;
   /*
    * NOTE: The 'total' variable should be representative of the sum of all
    *       six of the judges' scores.
