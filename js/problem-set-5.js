@@ -173,6 +173,13 @@ function credit() {
     }
   }
 
+  let evenarr =[];
+  let enum
+  let cardarr = Array.from(String(card), Number);
+
+  for(i = cardarr.length-1; i>0; i = i-2){
+    enum = 
+  }
 
 
 
