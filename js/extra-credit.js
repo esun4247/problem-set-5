@@ -34,7 +34,7 @@ function mario() { //Defines function mario
     output = output + "</code>"; //Adds a closing code tag to output
 
     document.getElementById("mario-easy-output").innerHTML = output; //Finds elements with given id and sets the inner text to the value of output
-  } else {
+  } else { //Runs code if original if statement was false
     document.getElementById("mario-easy-output").innerHTML = ""; //Finds elements with id and sets inner value to nothing
   }
 
@@ -46,42 +46,42 @@ function mario() { //Defines function mario
  */
 
 function marioAgain() { //Defines function marioAgain
-  let height = -1;
+  let height = -1; //Sets height to -1
 
-  while (!Number.isInteger(height) || (height < 1 || height > 23)) {
-    height = prompt("Height: ");
+  while (!Number.isInteger(height) || (height < 1 || height > 23)) { //Runs code while height is not an integer, less than 1, or greater than 23
+    height = prompt("Height: "); //Prompts user for height
 
-    if (height === null) {
-      break;
-    } else {
-      height = Number(height);
+    if (height === null) { //Runs following code if height is equal to null
+      break; //Stops code
+    } else { //Runs code if height is not equal to null
+      height = Number(height); //Changes height into a number
     }
   }
 
-  if (height !== null) {
-    let output = "<code>";
-    let space = "&nbsp;";
-    let block = "#";
+  if (height !== null) { //Runs if height does not equal null
+    let output = "<code>"; //Adds code tag to output
+    let space = "&nbsp;"; //Sets space equal to a space
+    let block = "#"; //Sets block equal to a #
 
-    for (let i = 0; i < height; i++) {
-      for (let j = 0; j < height - (i + 1); j++) {
-        output = output + space;
+    for (let i = 0; i < height; i++) { //Runs code while variable i is less than height, adds 1 to i each time
+      for (let j = 0; j < height - (i + 1); j++) { //Runs while j is less than height - (i+1), adds 1 to j each time
+        output = output + space; //Adds space to output
       }
-      for (let k = 0; k < i + 2; k++) {
-        output = output + block;
+      for (let k = 0; k < i + 2; k++) { //Runs code while k is less than (i+2), adds 1 to k each time
+        output = output + block; //Adds block(#) to output 
       }
-      output = output + space + space;
+      output = output + space + space; //Adds 2 spaces to output
 
-      for (let l = 0; l < i + 2; l++) {
-        output = output + block;
+      for (let l = 0; l < i + 2; l++) { //Runs while l is less than (i+2), adds 1 to l each time
+        output = output + block; //Adds block to output
       }
-      output = output + "<br>";
+      output = output + "<br>"; //Adds a line break to output
     }
-    output = output + "</code>";
+    output = output + "</code>"; //Adds a closing code tag to output
 
-    document.getElementById("mario-hard-output").innerHTML = output;
-  } else {
-    document.getElementById("mario-hard-output").innerHTML = "";
+    document.getElementById("mario-hard-output").innerHTML = output; //Finds elements with the same id and changes the innerHTML to output
+  } else { //Runs if original if statement is false
+    document.getElementById("mario-hard-output").innerHTML = ""; //Finds elements with same id and change the innerHTML to nothing
   }
 
   check("mario-again", height);
@@ -91,7 +91,7 @@ function marioAgain() { //Defines function marioAgain
  * SOLUTION. Credit.
  */
 
-function credit() {
+function credit() { //Defines function credit
   let card = "invalid";
 
   while (!Number.isInteger(card)) {
