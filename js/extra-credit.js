@@ -128,73 +128,73 @@ function credit() { //Defines function credit
 
         while (product > 0) { //Runs code while product is greater than 0
           let temp = product % 10; //Sets let temp equal to the remainder of product divided by 10
-          sum = sum + temp; //
-          product = Math.floor(product / 10);
+          sum = sum + temp; //Adds temp to the previous value of sum
+          product = Math.floor(product / 10); //Sets product equal to product / 10 rounded down
         }
 
-        sumMultDigits = sumMultDigits + sum;
-      } else {
-        sumNonMultDigits = sumNonMultDigits + digit;
+        sumMultDigits = sumMultDigits + sum; //Adds sum to sumMult Digits
+      } else { //Runs code if original if statement was flase
+        sumNonMultDigits = sumNonMultDigits + digit; //Adds digit to sumNonMultDigits
       }
 
-      multiply = !multiply;
-      number = Math.floor(number / 10);
+      multiply = !multiply; //Flips the value of multiply from true to false or false to true
+      number = Math.floor(number / 10); //Sets number to itself divided by 10 rounded down
     }
 
-    let checksum = ((sumNonMultDigits + sumMultDigits) % 10);
-    if (checksum === 0) {
-      if (current === 4) {
-        if (numDigits === 13 || numDigits === 16) {
-          prev = document.getElementById("cc");
-          if (prev) {
-            prev.parentNode.removeChild(prev);
+    let checksum = ((sumNonMultDigits + sumMultDigits) % 10); //Sets variable checksum equal to the remainder of the sum of sumMultDigits and sumNonMultDigits
+    if (checksum === 0) { //Runs following code if checksum is equal to 0 and is a number
+      if (current === 4) { //Runs following code if current is equal to 4 and is a number
+        if (numDigits === 13 || numDigits === 16) { //Runs code if numDigits is equal to 13 or 16, and has the same type
+          prev = document.getElementById("cc"); //Sets prev equal to any elements with id cc
+          if (prev) { //Runs code if prev is true
+            prev.parentNode.removeChild(prev); //Removes all previous content from the element
           }
 
-          let visa = document.createElement("img");
-          visa.setAttribute("id", "cc");
-          visa.setAttribute("src", "images/visa.png");
-          visa.setAttribute("width", "25%");
-          document.getElementById("credit-output").innerHTML = "";
-          document.getElementById("credit-output").appendChild(visa);
+          let visa = document.createElement("img"); //Sets variable cisa equal to the created element img
+          visa.setAttribute("id", "cc"); //Sets attributes of visa - id="cc"
+          visa.setAttribute("src", "images/visa.png"); //Sets attributes of visa - src="images/visa.png"
+          visa.setAttribute("width", "25%"); //Sets attributes of visa - width="25%"
+          document.getElementById("credit-output").innerHTML = ""; //Finds elements with id credit-output and sets the inner HTML to nothing
+          document.getElementById("credit-output").appendChild(visa); //Finds elements with id credit-output and sets innerHTML to the child of visa
         }
-      } else if (current === 3 && (previous === 4 || previous === 7)) {
-        if (numDigits === 15) {
-          prev = document.getElementById("cc");
-          if (prev) {
-            prev.parentNode.removeChild(prev);
+      } else if (current === 3 && (previous === 4 || previous === 7)) { //Runs code if current is equal to 3 and previous is equal to 4 or 7
+        if (numDigits === 15) { //Runs if numDigits is equal to 15
+          prev = document.getElementById("cc"); //Sets prev to elements with id cc
+          if (prev) { //Runs code if prev is true
+            prev.parentNode.removeChild(prev); //Removes any previous content from the element
           }
 
-          let amex = document.createElement("img");
-          amex.setAttribute("id", "cc");
-          amex.setAttribute("src", "images/amex.png");
-          amex.setAttribute("width", "25%");
-          document.getElementById("credit-output").innerHTML = "";
-          document.getElementById("credit-output").appendChild(amex);
+          let amex = document.createElement("img"); //Sets amex equal to the created element img
+          amex.setAttribute("id", "cc"); //Sets id to cc
+          amex.setAttribute("src", "images/amex.png"); //Sets src to images/amex.png
+          amex.setAttribute("width", "25%"); //Sets width to 25%
+          document.getElementById("credit-output").innerHTML = ""; //Finds element with same id and sets inner HTML to nothing
+          document.getElementById("credit-output").appendChild(amex); //Finds element with same id and sets inner HTML to the child of amex
         }
-      } else if (current === 5 && previous > 0 && previous < 6) {
-        if (numDigits === 16) {
-          prev = document.getElementById("cc");
-          if (prev) {
-            prev.parentNode.removeChild(prev);
+      } else if (current === 5 && previous > 0 && previous < 6) { //Runs code if current is equal to 5 and previous is greater than 0 and previous is greater than 6
+        if (numDigits === 16) { //Runs code if numDigits is equal to 16
+          prev = document.getElementById("cc"); //Sets prev equal to element with id cc
+          if (prev) { //Runs code if prev is true
+            prev.parentNode.removeChild(prev); //Removes any previous content from the element
           }
 
-          var mc = document.createElement("img");
-          mc.setAttribute("id", "cc");
-          mc.setAttribute("src", "images/mastercard.png");
-          mc.setAttribute("width", "25%");
-          document.getElementById("credit-output").innerHTML = "";
-          document.getElementById("credit-output").appendChild(mc);
+          var mc = document.createElement("img"); //Sets mc equal to created element img
+          mc.setAttribute("id", "cc"); //Adds id of cc
+          mc.setAttribute("src", "images/mastercard.png"); //Adds src of images/mastercard.png
+          mc.setAttribute("width", "25%"); //Adds width of 25%
+          document.getElementById("credit-output").innerHTML = ""; //Finds element with same id and sets inner HTML to nothing
+          document.getElementById("credit-output").appendChild(mc); //Finds element wiht same id and sets inner HTML to child of mc
         }
       }
-    } else {
-      document.getElementById("credit-output").innerHTML = "Invalid.";
+    } else { //Runs code if no other if statments were true
+      document.getElementById("credit-output").innerHTML = "Invalid."; //Finds element with id credit-output and sets it to "Invalid"
     }
-  } else {
-    prev = document.getElementById("cc");
-    if (prev) {
-      prev.parentNode.removeChild(prev);
+  } else { //Runs if no other previous if statments
+    prev = document.getElementById("cc"); //Sets prev to element with if cc
+    if (prev) { //Runs if prev is true(or truthy)
+      prev.parentNode.removeChild(prev); //Removes any previous content of the element.
     }
-    document.getElementById("credit-output").innerHTML = "";
+    document.getElementById("credit-output").innerHTML = ""; //Finds element with same if and sets inner HTML to nothing
   }
 
   check("credit", card);
