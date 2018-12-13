@@ -2,7 +2,7 @@
  * SOLUTION. Mario.
  */
 
-function mario() { 
+function mario() { //Defines function mario
   let height = -1; //Sets variable height equal to -1
 
   while (height < 1 || height > 23) { //Runs followring code while height is less than 1 or greater than 23
@@ -45,7 +45,7 @@ function mario() {
  * SOLUTION. Mario, Again.
  */
 
-function marioAgain() {
+function marioAgain() { //Defines function marioAgain
   let height = -1;
 
   while (!Number.isInteger(height) || (height < 1 || height > 23)) {
