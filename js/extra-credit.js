@@ -92,43 +92,43 @@ function marioAgain() { //Defines function marioAgain
  */
 
 function credit() { //Defines function credit
-  let card = "invalid";
+  let card = "invalid"; //Sets variable card equal to the string "invalid"
 
-  while (!Number.isInteger(card)) {
-    card = prompt("Card Number: ");
+  while (!Number.isInteger(card)) { //Runs code while card is not a number
+    card = prompt("Card Number: "); //Prompts user for a card number
 
-    if (card === null) {
-      break;
-    } else {
-      card = Number(card);
+    if (card === null) { //Runs following code if card is equal to null
+      break; //Stops code
+    } else { //Runs code if card is not null
+      card = Number(card); //Changes card to a number
     }
   }
 
-  let prev;
-  if (card !== null) {
-    let number = card;
-    let sumMultDigits = 0;
-    let sumNonMultDigits = 0;
-    let numDigits = 0;
-    let current = -1;
-    let previous = -1;
-    let multiply = false;
+  let prev; //Defines variable prev
+  if (card !== null) { //Runs following code if card does not equal null
+    let number = card; //Sets variable number equal to card
+    let sumMultDigits = 0; //Sets sumMultDigits equal to 0
+    let sumNonMultDigits = 0; //Sets sumnonMultDigits equal to 0
+    let numDigits = 0; //Sets numDigits equal to 0
+    let current = -1; //Sets current equal to -1
+    let previous = -1; //Sets previous equal to -1
+    let multiply = false; //Sets multiply equal to false
 
-    while (number > 0) {
-      digit = number % 10;
-      numDigits++;
+    while (number > 0) { //Runs code while number is less than 0
+      digit = number % 10; //Sets digit equal the remainder of number divided by 10
+      numDigits++; //Adds one to numDigits
 
-      let tmp = current;
-      current = digit;
-      previous = tmp;
+      let tmp = current; //Sets variable tmp equal to current
+      current = digit; //Sets current equal to digit
+      previous = tmp; //Sets previous equal to tmp
 
-      if (multiply) {
-        var product = digit * 2;
-        var sum = 0;
+      if (multiply) { //Runs code if multiply is true(is originall set to false)
+        var product = digit * 2; //Sets variable product equal to digit * 2
+        var sum = 0; //Sets variable sum = 0
 
-        while (product > 0) {
-          let temp = product % 10;
-          sum = sum + temp;
+        while (product > 0) { //Runs code while product is greater than 0
+          let temp = product % 10; //Sets let temp equal to the remainder of product divided by 10
+          sum = sum + temp; //
           product = Math.floor(product / 10);
         }
 
