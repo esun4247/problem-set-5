@@ -204,37 +204,37 @@ function credit() { //Defines function credit
  * SOLUTION. Guess.
  */
 
-function guess() {
-  let target = Number((Math.random() * 1001).toFixed(0));
-  let guess = -1;
-  let attempts = 0;
+function guess() { //Defines function guess
+  let target = Number((Math.random() * 1001).toFixed(0)); //Sets variable target equal to a random number between 1 and 1000
+  let guess = -1; //Sets guess equal to -1
+  let attempts = 0; //Sets attemptes = 0
 
-  while (guess !== target) {
-    guess = Number(prompt("Guess: "));
+  while (guess !== target) { //Runs code while guess does not equal target
+    guess = Number(prompt("Guess: ")); //sets guess equal to an input from the user, and changes it to a number
 
-    if (guess === null) {
-      break;
-    } else if (Number.isNan(guess)) {
-      guess = -1;
-    } else if (!Number.isInteger(guess)) {
-      guess = -1;
+    if (guess === null) { //Runs code if guess is equal to null
+      break; //Stops code
+    } else if (Number.isNan(guess)) { //Runs code if guess is not a number
+      guess = -1; //Sets guess equal to -1
+    } else if (!Number.isInteger(guess)) { //Runs code if guess is not an integer
+      guess = -1; //Sets guess equal to -1
     }
 
-    if (guess > 0 && guess < 1001) {
-      attempts++;
+    if (guess > 0 && guess < 1001) { //Runs code if guess is > 0 and <1001
+      attempts++; //Adds 1 to attempts
 
-      if (guess < target) {
-        alert("Try something a little larger...");
-      } else if (guess > target) {
-        alert("Try something a little smaller...");
+      if (guess < target) { //Runds code if guess is less than target
+        alert("Try something a little larger..."); //Displays an alert with the text in parentheses. 
+      } else if (guess > target) { //Runs code if guess is greater than target
+        alert("Try something a little smaller..."); //Displays an alert with the text in parentheses
       }
     }
   }
 
-  if (guess !== null) {
-    document.getElementById("guess-output").innerHTML = "Random Number: " + target + "<br>Attempts: " + attempts;
-  } else {
-    document.getElementById("guess-output").innerHTML = "";
+  if (guess !== null) { //Runs code if guess does not equal null
+    document.getElementById("guess-output").innerHTML = "Random Number: " + target + "<br>Attempts: " + attempts; //Finds element with id guess-output and changes the inner HTML to the string of words and variables
+  } else { //Runs code if guess is null
+    document.getElementById("guess-output").innerHTML = ""; //Finds element with id guess-output and changes inner HTML to nothing
   }
 
   check("guess");
