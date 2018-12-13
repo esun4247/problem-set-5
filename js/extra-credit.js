@@ -244,13 +244,13 @@ function guess() { //Defines function guess
  * SOLUTION. Hurricane.
  */
 
-function hurricane() {
-  const CAT5 = 156;
-  const CAT4 = 129;
-  const CAT3 = 110;
-  const CAT2 = 95;
-  const CAT1 = 73;
-  const TROP = 38;
+function hurricane() { //Defines funtion hurricane
+  const CAT5 = 156; //Sets const CAT5 equal to 156
+  const CAT4 = 129; //Sets CAT4 equal to 129
+  const CAT3 = 110; //Sets CAT3 equal to 110
+  const CAT2 = 95;  //Sets CAT2 equal to 95
+  const CAT1 = 73;  //Sets CAT1 equal to 73
+  const TROP = 38; //Sets TROP equal to 38
 
   let windspeed = -1;
   while (windspeed < 0) {
