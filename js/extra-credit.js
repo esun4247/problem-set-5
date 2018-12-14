@@ -252,47 +252,47 @@ function hurricane() { //Defines funtion hurricane
   const CAT1 = 73;  //Sets CAT1 equal to 73
   const TROP = 38; //Sets TROP equal to 38
 
-  let windspeed = -1;
-  while (windspeed < 0) {
-    windspeed = Number(prompt("Windspeed: "));
+  let windspeed = -1; //Sets windspeed equal to -1
+  while (windspeed < 0) { //Runs code while windspeed is less than 0
+    windspeed = Number(prompt("Windspeed: ")); //Sets windspeed equal to the user input, then changes into a number
 
-    if (windspeed === null) {
-      break;
-    } else if (Number.isNaN(windspeed)) {
-      windspeed = -1;
-    } else if (!Number.isInteger(windspeed)) {
-      windspeed = -1;
+    if (windspeed === null) { //Runs code if windspeed is null
+      break; //Stops code
+    } else if (Number.isNaN(windspeed)) { //Runs code if windspeed is not a number
+      windspeed = -1; //Sets windspeed equal to -1
+    } else if (!Number.isInteger(windspeed)) { //Runs code if windspeed is not an integer
+      windspeed = -1; //Sets windspeed equal to -1
     }
   }
 
-  if (windspeed !== null) {
-    if (windspeed > CAT5) {
-      document.getElementById("hurricane-output").innerHTML = "Category 5 Hurricane.";
-    } else if (windspeed > CAT4) {
-      document.getElementById("hurricane-output").innerHTML = "Category 4 Hurricane.";
-    } else if (windspeed > CAT3) {
-      document.getElementById("hurricane-output").innerHTML = "Category 3 Hurricane.";
-    } else if (windspeed > CAT2) {
-      document.getElementById("hurricane-output").innerHTML = "Category 2 Hurricane.";
-    } else if (windspeed > CAT1) {
-      document.getElementById("hurricane-output").innerHTML = "Category 1 Hurricane.";
-    } else if (windspeed > TROP) {
-      document.getElementById("hurricane-output").innerHTML = "Tropical Storm.";
-    } else {
-      document.getElementById("hurricane-output").innerHTML = "The skies are calm...";
+  if (windspeed !== null) { //Runs code if windspeed is not equal to null
+    if (windspeed > CAT5) { //Runs code if windspeed is greater than CAT5
+      document.getElementById("hurricane-output").innerHTML = "Category 5 Hurricane."; //Gets element with id hurricane-output and sets inner HTML to the text
+    } else if (windspeed > CAT4) { //Runs code if windspeed is greater than CAT4
+      document.getElementById("hurricane-output").innerHTML = "Category 4 Hurricane."; //Gets element with id hurricane-output and sets inner HTML to the text
+    } else if (windspeed > CAT3) { //Runs code if windspeed is greater than CAT3
+      document.getElementById("hurricane-output").innerHTML = "Category 3 Hurricane."; //Gets element with id hurricane-output and sets inner HTML to the text
+    } else if (windspeed > CAT2) { //Runs code if windspeed is greater than CAT2
+      document.getElementById("hurricane-output").innerHTML = "Category 2 Hurricane."; //Gets element with id hurricane-output and sets inner HTML to the text
+    } else if (windspeed > CAT1) { //Runs code if windspeed is greater than CAT1
+      document.getElementById("hurricane-output").innerHTML = "Category 1 Hurricane."; //Gets element with id hurricane-output and sets inner HTML to the text
+    } else if (windspeed > TROP) { //Runs code if windspeed is greater than TROP
+      document.getElementById("hurricane-output").innerHTML = "Tropical Storm."; //Gets element with id hurricane-output and sets inner HTML to the textwa
+    } else { //Runs code if none of the other if statements are true
+      document.getElementById("hurricane-output").innerHTML = "The skies are calm..."; //Gets element with id hurricane-output and sets inner HTML to the text
     }
-  } else {
-    document.getElementById("hurricane-output").innerHTML = "";
+  } else { //Runs code if if statements are false
+    document.getElementById("hurricane-output").innerHTML = ""; //Finds elements with id hurricane-output and changes inner HTML to nothing
   }
 
-  check("hurricane", windspeed);
+  check("hurricane", windspeed); 
 }
 
 /*
  * SOLUTION. Gymnastics.
  */
 
-function gymnastics() {
+function gymnastics() { //Define function gymnastics
   let total = 0;
   let scores = [];
   let valid = 0;
