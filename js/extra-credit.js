@@ -293,27 +293,27 @@ function hurricane() { //Defines funtion hurricane
  */
 
 function gymnastics() { //Define function gymnastics
-  let total = 0;
-  let scores = [];
-  let valid = 0;
-  let max = -1;
-  let min = 11;
-  let score = -1;
+  let total = 0; //Sets variable total equal to 0
+  let scores = []; //Defines array scores
+  let valid = 0; //Sets valid equal to 0
+  let max = -1; //Sets max = -1
+  let min = 11; //Sets min equal to 11
+  let score = -1; //Sets score equal -1
 
-  while (valid < 6) {
-    score = Number(prompt("Score: "));
+  while (valid < 6) { //Runs while valid is less than 0
+    score = Number(prompt("Score: ")); //Sets variable score equal to the user input converted to a number
 
-    if (score === null) {
-      break;
-    } else if (Number.isNaN(score)) {
-      score = -1;
+    if (score === null) { //Runs code if score is equal to null
+      break; //Stops code
+    } else if (Number.isNaN(score)) { //Runs code if score is not a number
+      score = -1; //Sets score equal to -1
     }
 
-    if (score >= 0 && score <= 10) {
-      valid++;
-      scores.push(score);
+    if (score >= 0 && score <= 10) { //Runs code if score is greater than or equal to 0 and less than or equal to 10
+      valid++; //Adds one to variable valid
+      scores.push(score); //Pushes score into the array
 
-      if (score < min) {
+      if (score < min) { //Runs code if score is less than min
         min = score;
       }
       if (score > max) {
