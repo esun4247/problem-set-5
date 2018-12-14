@@ -314,25 +314,25 @@ function gymnastics() { //Define function gymnastics
       scores.push(score); //Pushes score into the array
 
       if (score < min) { //Runs code if score is less than min
-        min = score;
+        min = score; //Sets min equal to score
       }
-      if (score > max) {
-        max = score;
+      if (score > max) { //Runs code if score is greater than max
+        max = score; //Sets max equal to score
       }
-      total = total + score;
+      total = total + score; //Adds score to total
     }
   }
 
-  if (score !== null) {
-    let sum = total;
-    sum = sum - min - max;
-    let average = (sum / 4.0).toFixed(2);
+  if (score !== null) { //Runs following code if score is not equal to null
+    let sum = total; //Sets variable sum equal to toal
+    sum = sum - min - max; //Sets sum equal to itself minus min minus max
+    let average = (sum / 4.0).toFixed(2);  //Sets variable average equal to sum/4 rounded to 2 decimal places
 
-    let result = `Discarded: ${min}, ${max}<br>Score: ${average}`;
-    document.getElementById("gymnastics-output").innerHTML = result;
-  } else {
-    scores = null;
-    document.getElementById("gymnastics-output").innerHTML = "";
+    let result = `Discarded: ${min}, ${max}<br>Score: ${average}`; //Sets variable result equal to to the line text and variables printed.  It 
+    document.getElementById("gymnastics-output").innerHTML = result; //Finds elements with id gymnastics-output and sets inner HTML to variable result
+  } else { //Runs code if score is null(if statement is false)
+    scores = null; //Sets array scores equal to null
+    document.getElementById("gymnastics-output").innerHTML = ""; //Finds element with matching id and sets inner HTML to nothing
   }
 
   check("gymnastics", scores);
@@ -342,77 +342,77 @@ function gymnastics() { //Define function gymnastics
  * SOLUTION. Report Card.
  */
 
-function reportCard() {
-  let testTotal = 0;
-  let quizTotal = 0;
-  let homeworkTotal = 0;
-  let tests = 0;
-  let quizzes = 0;
-  let homeworks = 0;
+function reportCard() { //Defines function reportCard
+  let testTotal = 0; //Sets testTotal equal to 0
+  let quizTotal = 0; //Sets quizTotal equal to 0
+  let homeworkTotal = 0; //Sets homeworkTotal equal to 0
+  let tests = 0; //Sets tests = 0
+  let quizzes = 0; //Sets quizzes = 0
+  let homeworks = 0; //Sets homeworks = 0
 
-  let testScore = -2;
-  while (testScore !== -1) {
-    testScore = Number(prompt("Test: "));
+  let testScore = -2; //Sets testScore equal to -2
+  while (testScore !== -1) { //Runs code while testscore does not equal -1
+    testScore = Number(prompt("Test: ")); //Sets testScore equal to user input converted to a number
 
-    if (testScore === null) {
-      break;
-    } else if (Number.isNaN(testScore)) {
-      testScore = -2;
-    } else if (testScore === -1) {
-       break;
-    } else if (testScore >= 0 && testScore <= 100) {
-      tests++;
-      testTotal = testTotal + testScore;
+    if (testScore === null) { //Runs code if testscore is equal to null
+      break; //Stops code
+    } else if (Number.isNaN(testScore)) { //Runs code if testScore is not a number
+      testScore = -2; //Sets testscore equal to -2
+    } else if (testScore === -1) { //Runs code if testScore is equal to -1
+       break; //Stops code
+    } else if (testScore >= 0 && testScore <= 100) { //Runs code if testScore is greater than or equal to 0 and less than or equal to 100
+      tests++; //Adds 1 to tests
+      testTotal = testTotal + testScore; //Adds testScore to the existing value of testTotal
     }
   }
 
-  let quizScore = -2;
-  while (quizScore !== -1) {
-    quizScore = Number(prompt("Quiz: "));
+  let quizScore = -2; //Sets quizScore to -2
+  while (quizScore !== -1) { //Runs code while quizScore is not equal to -1
+    quizScore = Number(prompt("Quiz: ")); //Sets quizScore equal to user input changed to a number
 
-    if (quizScore === null) {
-      break;
-    } else if (Number.isNaN(quizScore)) {
-      quizScore = -2;
-    } else if (quizScore === -1) {
-       break;
-    } else if (quizScore >= 0 && quizScore <= 100) {
-      quizzes++;
-      quizTotal = quizTotal + quizScore;
+    if (quizScore === null) { //Runs code if quizScore 
+      break; //Stops code
+    } else if (Number.isNaN(quizScore)) { //Runs code if quizScore is not a number
+      quizScore = -2; //Sets quizScore to -2
+    } else if (quizScore === -1) { //Runs code if quizScore is equal to -1
+       break; //Stops code
+    } else if (quizScore >= 0 && quizScore <= 100) { //Runs code if quizScore is greater than or equal to 0 and less than or equal to 100
+      quizzes++; //Adds 1 to quizzes
+      quizTotal = quizTotal + quizScore; //Adds quizScore to the existing quizTotal
     }
   }
 
-  let homeworkScore = -2;
-  while (homeworkScore !== -1) {
-    homeworkScore = Number(prompt("Homework: "));
+  let homeworkScore = -2; //Sets homeworkScore equal to -2
+  while (homeworkScore !== -1) { //Runs code while homeworkScore does not equal -1
+    homeworkScore = Number(prompt("Homework: ")); //Sets homeworkScore equal to user input changed to a number
 
-    if (homeworkScore === null) {
-      break;
-    } else if (Number.isNaN(homeworkScore)) {
-      homeworkScore = -2;
-    } else if (homeworkScore === -1) {
-       break;
-    } else if (homeworkScore >= 0 && homeworkScore <= 100) {
-      homeworks++;
-      homeworkTotal = homeworkTotal + homeworkScore;
+    if (homeworkScore === null) { //Runs code while homeworkScore is equal to null
+      break; //Stops code
+    } else if (Number.isNaN(homeworkScore)) { //Runs code if homeworkScore is not a number
+      homeworkScore = -2; //Sets homeworkScore equal to -2
+    } else if (homeworkScore === -1) { //Runs code if homeworkScore is equal to -1
+       break; //Stops code
+    } else if (homeworkScore >= 0 && homeworkScore <= 100) { //Runs code if homeworkScore is greater than or equal to 0 and less than or equal to 100
+      homeworks++; //Adds 1 to homeworks
+      homeworkTotal = homeworkTotal + homeworkScore; //Adds homeworkScore to the existing homeworkTotal
     }
   }
 
-  let testAverage = null;
-  let quizAverage = null;
-  let homeworkAverage = null;
-  let average = null;
+  let testAverage = null; //Sets testzAverage equal to null
+  let quizAverage = null; //Sets quizAverage equal to null
+  let homeworkAverage = null; //Sets homeWworkAverage equal to null
+  let average = null; //Sets average equal to null
 
-  if (testScore === null || quizScore === null || homeworkScore === null) {
-    document.getElementById("report-card-output").innerHTML = "";
-  } else {
-    testAverage = (testTotal / tests).toFixed(2);
-    quizAverage = (quizTotal / quizzes).toFixed(2);
-    homeworkAverage = (homeworkTotal / homeworks).toFixed(2);
-    average = (testAverage * 0.6 + quizAverage * 0.3 + homeworkAverage * 0.1).toFixed(2);
+  if (testScore === null || quizScore === null || homeworkScore === null) { //Runs code if testScore, quizScore, or homeworkSore is equal to null
+    document.getElementById("report-card-output").innerHTML = ""; //Finds element with id report-card-output and sets inner HTML to nothing
+  } else { //Runs code if original if statement is false
+    testAverage = (testTotal / tests).toFixed(2); //Sets testAverage to testTotal divided by tests rounded to 2 decimal places
+    quizAverage = (quizTotal / quizzes).toFixed(2); //Sets quizAverage equal to quizTotal/quizzes rounded to 2 decimal places
+    homeworkAverage = (homeworkTotal / homeworks).toFixed(2); //Sets quizAverage equal to homeworkTotal/homeworks rounded to 2 decimal places
+    average = (testAverage * 0.6 + quizAverage * 0.3 + homeworkAverage * 0.1).toFixed(2); //Sets average equal to testAverage, quizAverage, and homeworkAverage wieghted with 60%, 30%, and 10% respectively
 
-    let result = `Tests: ${testAverage}<br>Quizzes: ${quizAverage}<br>Homework: ${homeworkAverage}<br>Grade: ${average}`;
-    document.getElementById("report-card-output").innerHTML = result;
+    let result = `Tests: ${testAverage}<br>Quizzes: ${quizAverage}<br>Homework: ${homeworkAverage}<br>Grade: ${average}`; //Sets result equal to the text and variable to show the averages of tests, quizzes, and homework, as well as the total average
+    document.getElementById("report-card-output").innerHTML = result; //Finds element with id report-card-outpur and sets the inner HTML to result
   }
 
   check("report-card", testTotal, tests, quizTotal, quizzes, homeworkTotal, homeworks);
